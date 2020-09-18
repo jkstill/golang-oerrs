@@ -10,11 +10,22 @@ Several Errors can be looked up by a common name
 
 All of the others can be looked up by number
 
-
 ## Get and use oerrs
 
 ```text
    go get github.com/jkstill/golang-oerrs
+```
+
+As per comments in the program, 'go run' and 'go build' take ~1 minute to complete, and so does 'go get'.
+
+This seems to be due to 20k+ calls to `errors.New`.
+
+Once built, the lookup time is quite fast.
+
+If already installed, and you want the most recent version:
+
+```text
+   go get -u github.com/jkstill/golang-oerrs
 ```
 
 Simple test program, using the built in test function
@@ -30,7 +41,6 @@ func main () {
    oerrs.Test()
 }
 ```
-
 
 ## Generate oerrs.go
 
@@ -49,9 +59,3 @@ This seems to be due to 20k+ calls to `errors.New`.
 
 Once built, the lookup time is quite fast.
  
-
-
-
-
-
-
