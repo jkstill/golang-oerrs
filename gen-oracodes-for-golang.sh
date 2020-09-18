@@ -123,8 +123,8 @@ COMMENT
 	oramsg=${oramsg//\\/\\\\}
 	echo "	ErrByNum[$oranum] = errors.New(\"dpiStmt_execute: ORA-$oranum: $oramsg\")"
 done < <(
-	grep -E '^01555' $ORACLE_HOME/rdbms/mesg/oraus.msg | 
-	#grep -E '^[[:digit:]]{5}' $ORACLE_HOME/rdbms/mesg/oraus.msg | 
+	#grep -E '^01555' $ORACLE_HOME/rdbms/mesg/oraus.msg | 
+	grep -E '^[[:digit:]]{5}' $ORACLE_HOME/rdbms/mesg/oraus.msg | 
 	tr -d '[",]' | 
 	awk  '{ 
 		printf("%s ", $1+0); 
