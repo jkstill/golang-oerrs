@@ -58,6 +58,23 @@ As per comments in the program, 'go run' and 'go build' take ~1 minute to comple
 This seems to be due to 20k+ calls to `errors.New`.
 
 Once built, the lookup time is quite fast.
+
+## oracle-err-catch.go
+
+This is a small program to demonstrate connecting to an Oracle database and running a query.
+
+If the table does not exist, it will be created.
+
+```text
+jkstill:~/go/src/oracle/oracle-test$ ./oracle-err-catch 
+That Table does not exist
+Table mytable created - please try again
+
+jkstill:~/go/src/oracle/oracle-test$ ./oracle-err-catch 
+ID:    1 The date is: 2020-09-18T21:17:48-07:00
+ID:    2 The date is: 2020-09-18T21:17:48-07:00
+2020/09/18 21:17:48 id= 2
+```
  
 ## Named Errors
 
