@@ -121,7 +121,7 @@ COMMENT
 	
 	#oramsg=$(echo "$oramsg" | sed -e 's/\\/\\\\/g')
 	oramsg=${oramsg//\\/\\\\}
-	echo "	ErrByNum[$oranum] = errors.New(\"dpiStmt_execute: ORA-$oranum: $oramsg\")"
+	echo "	ErrByNum[$oranum] = errors.New(\"dpiStmt_execute: ORA-$oracode: $oramsg\")"
 done < <(
 	#grep -E '^01555' $ORACLE_HOME/rdbms/mesg/oraus.msg | 
 	grep -E '^[[:digit:]]{5}' $ORACLE_HOME/rdbms/mesg/oraus.msg | 
